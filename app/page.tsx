@@ -1,49 +1,67 @@
 // components/home/page.ts
 
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-// components
-import CustomCursor from "./@components/cursor/page";
-import Navigation from "./@components/navbar/page";
-import Hero from "./@components/hero/page";
-import LinkSlides from "./@components/linkslides/page";
-import QuranicAbout from "./@components/QuranicAbout/page";
-import HadithAbout from "./@components/HadithAbout/page";
-import AboutUs from "./@components/aboutUs/page";
-import PricingDonate from "./@components/pricing/page";
-import Reviews from "./@components/reviews/page";
-import JoinComunity from "./@components/joinComunity/page";
-import Footer from "./@components/footer/page";
+// export let modData: any[] = [];
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      /*---*/
-      const locomotivescroll = new LocomotiveScroll({
-        lenisOptions: {
-          lerp: 30,
-          duration: 1,
-        },
-      });
-      /*---*/
-    })();
-  }, []);
+  // const [verses, setVerses] = useState<any[]>([]);
+  // if (verses.length > 0) {
+  //   modData = verses;
+  // }
+  // useEffect(() => {
+  //   const fetchApi = async () => {
+  //     const url =
+  //       "https://cdn.jsdelivr.net/gh/fawazahmed0/quran-api@1/editions/zul-iqembulezifundi.json";
+  //     const res = await fetch(url);
+  //     const data = await res.json();
+
+  //     // Group verses by chapter
+  //     const groupedVerses = data.quran.reduce((acc: any, verse: any) => {
+  //       const chapter = verse.chapter;
+  //       if (!acc[chapter]) {
+  //         acc[chapter] = {
+  //           chapter: chapter,
+  //           versesCount: 0,
+  //           verses: [],
+  //         };
+  //       }
+  //       acc[chapter].verses.push(verse.text);
+  //       acc[chapter].versesCount += 1;
+  //       return acc;
+  //     }, {});
+  //     const formattedVerses = Object.values(groupedVerses);
+  //     setVerses(formattedVerses);
+  //   };
+  //   fetchApi();
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(modData);
+  // }, [verses]);
+
+  // useEffect(() => {
+  //   const postApi = async (verses: any[]) => {
+  //     const url = "http://localhost:3000/api/quran";
+  //     const res = await fetch(url, {
+  //       method: "POST",
+  //       body: JSON.stringify(verses),
+  //       cache: "no-store",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "x-api-key": process.env.API_KEY || "",
+  //       },
+  //     });
+  //     const data = await res.json();
+  //     return data;
+  //   };
+  //   postApi(verses);
+  // }, [verses]);
 
   return (
     <>
-      <CustomCursor />
-      <Navigation />
-      <Hero />
-      <LinkSlides />
-      <QuranicAbout />
-      <HadithAbout />
-      <AboutUs />
-      <PricingDonate />
-      <Reviews />
-      <JoinComunity />
-      <Footer />
+      <h1>quran api...</h1>
     </>
   );
 };
